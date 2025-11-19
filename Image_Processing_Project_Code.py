@@ -36,7 +36,7 @@ def resize_img(img):
 
 """**As the input image is quite high resolution so we have to resize it to show it effeciently. Also we have to take care of the ratio so that our image doesn't look wierd or streched**"""
 
-img = cv2.imread("/home/argonghost/Downloads/pic_for_project.jpg")
+img = cv2.imread("test.jpeg")
 
 # Resizing Image while maintaining ratio as original image is quite large
 small_img = resize_img(img)
@@ -52,6 +52,7 @@ def pencil_sketch(img):
     return sketch
 
 pencil_img = pencil_sketch(img)
+cv2.imwrite("results/pencil_sketch.jpg", pencil_img)
 
 # Resizing Image while maintaining ratio as original image is quite large
 small_img = resize_img(pencil_img)
@@ -77,6 +78,7 @@ def cartoon_effect(img):
     return cartoon
 
 cartoon_img = cartoon_effect(img)
+cv2.imwrite("results/cartoon.jpg", cartoon_img)
 
 # Resizing Image while maintaining ratio as original image is quite large
 small_img = resize_img(cartoon_img)
@@ -94,6 +96,7 @@ def warming_filter(img):
     return img.astype(np.uint8)
 
 warm_img = warming_filter(img)
+cv2.imwrite("results/warming.jpg", warm_img)
 
 # Resizing Image while maintaining ratio as original image is quite large
 small_img = resize_img(warm_img)
@@ -111,6 +114,7 @@ def cooling_filter(img):
     return img.astype(np.uint8)
 
 cool_img = cooling_filter(img)
+cv2.imwrite("results/cooling.jpg", cool_img)
 
 # Resizing Image while maintaining ratio as original image is quite large
 small_img = resize_img(cool_img)
@@ -127,6 +131,7 @@ def hdr_effect(img):
     return img_hdr
 
 hdr_img = hdr_effect(img)
+cv2.imwrite("results/hdr.jpg", hdr_img)
 
 # Resizing Image while maintaining ratio as original image is quite large
 small_img = resize_img(hdr_img)
@@ -148,6 +153,7 @@ def glitch_aberration_filter(img):
     return glitch
 
 glitch_img = glitch_aberration_filter(img)
+cv2.imwrite("results/glitch.jpg", glitch_img)
 
 # Resizing Image while maintaining ratio as original image is quite large
 small_img = resize_img(glitch_img)
@@ -177,6 +183,7 @@ def watercolor_filter(img):
     return watercolor
 
 wc_img = watercolor_filter(img)
+cv2.imwrite("results/watercolor.jpg", wc_img)
 
 """**This code is generating a water color effect through smoothing colors using bilateral filtering, edges are detected and inverted and then the smoothened image and detected edges are combined and displayed**"""
 
@@ -189,6 +196,7 @@ def duotone_filter(img, color1=(30, 10, 100), color2=(230, 220, 100)):
 
 
 duo_img = duotone_filter(img)
+cv2.imwrite("results/duotone.jpg", duo_img)
 
 
 """**This code produces a duo tone effect by conversion of Gray scale and then an empty image is prepared to store the results, and blending between the colors is performed**"""
@@ -208,6 +216,7 @@ def halftone_filter(img, dot_size=6):
     return halftone_bgr
 
 half_img = halftone_filter(img)
+cv2.imwrite("results/halftone.jpg", half_img)
 
 
 """**This function produces a halftone effect, first the gray scale conversion is performed, an output canvas is prepared, after which looping over the image is done in small blocks, brightness of each patch is measured, and dot size is measured based on the brightness, after which the dot is drawn and image is converted back to color after which the picture is displayed with half tone filter **"""
@@ -228,6 +237,7 @@ def infrared_filter(img):
 
 
 ir_img = infrared_filter(img)
+cv2.imwrite("results/infrared.jpg", ir_img)
 
 
 """**This function produces the warm effect. First, image is split into RGB (Red-Green-Blue) channels, and the red channel is boosted, while the green channel is adjusted and the blue channel is suppressed. Channels are emerged back, contrast is enhanced, and the results are displayed. **"""
